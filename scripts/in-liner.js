@@ -18,7 +18,7 @@
      */
     'use strict';
     var Inliner = (function () {
-        var styles = $("style").text().split("}"),
+        var styles = '',
             selectorStyles = [],
             selector = '',
             j;
@@ -55,6 +55,7 @@
 
         function createModel() {
             // loop through each declaration
+            styles = $('#target').find('style').text().split("}");
             $.each(styles, function (index, elementType) {
                 // split on { which will now separate your style selector from declarations
                 var cssPair = $.trim(elementType).split("{"),
@@ -95,8 +96,46 @@
             applyStyles();
         }
 
+
         return {
-            init: createModel
+            init: function() {
+                $('.fpSubmitButton').on('click', function() {
+                    // $('.overlay').fadeIn();
+
+                    var originalCode = $.trim($('#original').val());
+                    $('#target').html(originalCode);
+
+                    createModel();
+
+                    var parsed = $.trim($('#target').html());
+                    $('#inlined').val(parsed);
+
+                    $('#copy_button').clipboard({
+                        path: 'jquery.clipboard.swf',
+                        copy: function() {
+                            $('#copy_button').on('click', function() {
+                                // change button text to read 'copied.'
+                                $('#copy_button').val('Copied.');
+                                //change the button text back after 3 seconds
+                                setTimeout(function(){
+                                    $('#copy_button').val('Copy HTML.');
+                                }, 3000);
+                                //alert("In-lined HTML copied to clipboard.");
+                            });
+                            return $('#inlined').val();
+                        }
+
+                    });
+
+                    // $('.overlay').fadeOut();
+                });
+
+                // clear both fields
+                $('#clear_button').on('click', function() {
+                    $('#original').val('');
+                    $('#inlined').val('');
+                });
+            }
         };
     }());
 
@@ -104,3 +143,5 @@
         Inliner.init();
     });
 }(jQuery));
+
+
