@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html>
 
-<head lang="en">
-    <title>FreePeople.com -- HTML In-Liner</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-</head>
+    <head lang="en">
+        <title>E-mail In-Liner</title>
+        <link rel="stylesheet" href="styles/styles.css" />
+    </head>
 
-<body>
-    <div class="container">
-        <div id="target"></div>
-        <div class="overlay"></div>
+    <body>
+        <div class="container">
 
-        <img class="topperIMG" width="600" height="103" src="http://static.fpassets.com/content/emails/monthly-assets/2014/06-jun/june-header.jpg" />
+            <div id="target"></div>
+            <div class="overlay"></div>
 
-        <div class="introTXT">
-            <h1>HTML In-Liner</h1>
+            <div class="headers">
+                <h1>E-mail In-Liner</h1>
+                <h2>Instructions:</h2>
+            </div>
 
+            <div class="instructionList">
+                <ol>
+                    <li>Paste your original HTML (including the styles within the &lt;head&gt;) in the first field below.</li>
+                    <li>Click "Make Magic."</li>
+                    <li>You just said the phrase "make magic" out loud, didn't you?</li>
+                    <li>Click "Copy HTML." to copy your newly in-lined HTML to the clipboard.</li>
+                </ol>
+            </div>
 
-                <h2 style="font-style: normal; margin-bottom: -10px !important;">Instructions:</h2>
-            <p>1. Paste your original HTML (including the styles within the &lt;head&gt;) in the first field below.<br />
-                2. Click "Make Magic."<br />
-                3. Wait a sec while the magic happens.<br />
-                4. Click "Copy HTML." to copy your newly in-lined HTML to the clipboard.<br /></p>
+            <form>
+
+                <!-- BEGIN ORIGINAL -->
+                <p class="textareaContainer">
+                    <label>Insert initial HTML here:</label>
+                    <textarea class="textarea" name="original" id="original"></textarea>
+                </p>
+                <div class="inlinerSubmit">
+                    <input class="submit_button btn" type="button" value="Make magic." />
+                </div>
+                <!-- END ORIGINAL -->
+
+                <!-- BEGIN IN-LINED -->
+                <p class="textareaContainer">
+                    <label>In-lined HTML appears here:</label>
+                    <textarea class="textarea" name="inlined" id="inlined"></textarea>
+                </p>
+                <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="inlinerCopy">
+                                    <input id="copy_button" class="btn" type="button" value="Copy HTML." />
+                                </div>
+                            </td>
+                            <td>
+                                <div class="inlinerClear">
+                                    <input id="clear_button" class="btn" type="button" value="Clear." />
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- END IN-LINED -->
+
+            </form>
+
+            <div class="footerlink">
+                <a style="text-decoration: none;" href="https://github.com/mike-t-mitchell/in-liner">View this Project on Github</a>
+            </div>
 
         </div>
+    </body>
 
-        <form class="fpForm">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/jQuery.clipboard.js"></script>
+    <script src="scripts/in-liner.js"></script>
 
-            <p class="fpLabel">Insert initial HTML here:<br /></p>
-            <textarea class="textarea" name="original" id="original"></textarea><br /><br />
-
-            <div class="fpSubmit">
-                <input class="fpSubmitButton" type="button" value="Make magic." />
-            </div>
-
-            <p class="fpLabel"><br />In-lined HTML appears here:<br /></p>
-            <textarea class="textarea" name="inlined" id="inlined"></textarea>
-
-            <center><table>
-                <tbody>
-                <tr>
-                    <td><div class="fpCopy">
-                        <input id="copy_button" type="button" value="Copy HTML." />
-                    </div></td>
-                    <td><div class="fpClear">
-                        <input id="clear_button" type="button" value="Clear." />
-                    </div></td>
-                </tr>
-                </tbody>
-            </table></center>
-
-            <!-- <div class="fpCopy">
-                <input id="copy_button" type="button" value="Copy HTML." />
-            </div>
-
-            <div class="fpClear">
-                <input id="clear_button" type="button" value="Clear." />
-            </div> -->
-
-
-
-        </form>
-
-    <p><a style="text-decoration: none;" href="https://github.com/freepeople/email-inliner">View this Project on Github</a><br><br></p>
-    </div>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/jQuery.clipboard.js"></script>
-<script src="scripts/in-liner.js"></script>
-
-</body>
 </html>

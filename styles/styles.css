@@ -1,221 +1,164 @@
-/* center the container */
-body {
-    margin: 0;
-    padding: 0;
-}
+/*************************
+ *    MARKUP ELEMENTS    *
+ *************************/
 
-body p{
-    font-family: "Avenir Next", Lato, Helvetica Neue, Helvetica, Arial, sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.5px !important;
-    line-height: 1.5 !important;
-    color: #7e7e7e !important;
-}
+    body { margin: 0; padding: 0; }
 
-body p strong {
-    color: #3e3e3e !important;
-}
+    p {
+        font-family: Tahoma, Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #3e3e3e;
+        margin: 0;
+        padding: 0;
+    }
 
-.overlay {
-    background: url(http://www.freepeople.com/resources/_shared/images/layout/_fp/loading-icon-small.gif) no-repeat center center;
-    background-color: rgba(255, 255, 255, .8);
-    height: 900px;
-    width: 100%;
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
+    h1 {
+        font-family: Tahoma, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        font-style: normal;
+        letter-spacing: 1px;
+        color: #3e3e3e;
+        text-transform: uppercase;
+        margin: 0 0 25px;
+    }
 
-#target {
-    display: none;
-}
+    h2 {
+        font-family: Tahoma, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #3e3e3e;
+        margin: 0;
+    }
 
-.container {
-    margin: 0 auto;
-    width: 600px;
-    height: 800px;
-    position: relative;
-}
+    a {
+        font-family: Tahoma, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #3e3e3e;
+        margin: 0;
+    }
 
-.topperIMG {
-    height: auto;
-    width: 600px;
-}
+    a:hover { color: #333; }
 
-.introTXT {
-    margin-left: 11px;
-}
+    ol { margin: 5px 0; padding-left: 16px; }
 
-a {
-    font-family: Lato, "Avenir Next", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    color: #eb5190;
-}
+    li {
+        font-family: "Lato", Arial, Helvetica, sans-serif;
+        font-weight: 200 ;
+        font-size: 11px;
+        letter-spacing: 1px;
+        color: #7e7e7e;
+        margin-left: 0;
+        padding-left: 0;
+    }
 
-a:hover {
-    color: #e91f72;
-}
+    strong { color: #3e3e3e; }
 
-h1 {
-    font-family: “Hoefler Text”, Baskerville, “Baskerville old face”, Garamond;
-    color: #3e3e3e;
-    margin-bottom: 5px;
-    padding: 0px;
-    font-style: italic;
-    font-size: 16px !important;
-    font-weight: 400;
-    letter-spacing: 1px;
-    line-height: 20px;
-    color: #3e3e3e !important;
-}
+    textarea {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        height: 200px;
+        width: 100%;
+        background: #f7f7f7;
+        resize: none;
+        margin-top: 5px;
+        padding: 0;
+    }
 
-h2 {
-    font-family: Lato, "Avenir Next", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    line-height: 18px;
-    color: #3e3e3e;
-}
+    textarea:focus { background: #fff; outline: none; }
 
-.textarea {
-    height: 200px;
-    width: 572px;
-    border-image: url(http://static.fpassets.com/resources/_shared/images/backgrounds/border-75.png) !important;
-    border-image-slice: 1 !important;
-    border-image-width: 1 !important;
-    border-image-outset: 0 !important;
-    border-image-repeat: stretch !important;
-    border-radius: 0 !important;
-    background: #f7f7f7 !important;
-    resize: none;
-}
+    label { text-transform: uppercase; }
 
-.textarea:focus {
-    background: #fff !important;
-    outline: none;
-    border-image: url(http://static.fpassets.com/resources/_shared/images/backgrounds/border-hotpink.png) !important;
-    border-image-slice: 1 !important;
-    border-image-width: 1 !important;
-    border-image-outset: 0 !important;
-    border-image-repeat: stretch !important;
-}
 
-.fpForm {
-    margin-top: 20px;
-    margin-left: 11px;
-}
+/************************
+ *    MISCELLANEOUS     *
+ ************************/
 
-/* field labels */
-.fpForm .fpLabel {
-    text-transform: uppercase;
-    font-family: "Lato","Avenir Next",Arial,Helvetica,sans-serif !important;
-    color: #3e3e3e !important;
-    font-size: 10px !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px !important;
-    margin-bottom: 5px;
-    padding: 0px;
-}
+    .container {
+        width: 600px;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 50px;
+        position: relative;
+    }
 
-/* submit button */
-.fpForm .fpSubmit {
-    margin: 0 auto 20px auto !important;
-    padding: 1px !important;
-    width: 125px;
-    background: url(http://static.fpassets.com/resources/_shared/images/backgrounds/border-hotpink.png) !important;
-}
+    /* "busy" spinner */
+    .overlay {
+        background: url(../assets/loading-icon-small.gif) no-repeat center center rgba(255, 255, 255, .8) ;
+        height: 800px;
+        width: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
 
-.fpSubmit input.fpSubmitButton {
-    box-sizing: border-box;
-    display: inline-block;
-    color: #fff;
-    font-size: 11px;
-    font-family: "Lato",Arial,Helvetica,sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    word-spacing: 2px;
-    line-height: 1;
-    vertical-align: middle;
-    cursor: pointer;
-    margin: 0;
-    padding: 12px !important;
-    background-color: #ff008a;
-    -webkit-transition: background-color .15s;
-    transition: background-color .15s;
-    border: solid 1px #fff;
-    width: 100%;
-    outline: none;
-}
+    #target { display: none; }
+    .headers { margin: 20px 0 10px; }
+    .instructionList { margin: 0 0 20px; }
 
-.fpSubmit input.fpSubmitButton:hover {
-    background-color: #eb007a;
-}
 
-.fpForm .fpCopy {
-    margin: 18px auto 20px auto !important;
-    padding: 1px !important;
-    width: 125px;
-    background: url(http://static.fpassets.com/resources/_shared/images/backgrounds/border-hotpink.png) !important;
-}
 
-.fpCopy input#copy_button {
-    box-sizing: border-box;
-    display: inline-block;
-    color: #fff;
-    font-size: 11px;
-    font-family: "Lato",Arial,Helvetica,sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    word-spacing: 2px;
-    line-height: 1;
-    vertical-align: middle;
-    cursor: pointer;
-    margin: 0;
-    padding: 12px !important;
-    background-color: #ff008a;
-    -webkit-transition: background-color .15s;
-    transition: background-color .15s;
-    border: solid 1px #fff;
-    width: 100%;
-    outline: none;
-}
+/************************
+ *    BUTTON-RELATED    *
+ ************************/
 
-.fpForm .fpClear {
-    margin: 18px auto 20px auto !important;
-    padding: 1px !important;
-    width: 125px;
-    background: url(http://static.fpassets.com/resources/_shared/images/backgrounds/border-hotpink.png) !important;
-}
+    .textareaContainer { margin: 10px 0; text-transform: uppercase; }
 
-.fpClear input#clear_button {
-    box-sizing: border-box;
-    display: inline-block;
-    color: #fff;
-    font-size: 11px;
-    font-family: "Lato",Arial,Helvetica,sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    word-spacing: 2px;
-    line-height: 1;
-    vertical-align: middle;
-    cursor: pointer;
-    margin: 0;
-    padding: 12px !important;
-    background-color: #ff008a;
-    -webkit-transition: background-color .15s;
-    transition: background-color .15s;
-    border: solid 1px #fff;
-    width: 100%;
-    outline: none;
-}
+    /* submit button spacing and width */
+    form .inlinerSubmit {
+        margin: 0 auto;
+        padding: 0;
+        width: 125px;
+    }
+
+    /* copy, clear button spacing and width */
+    form .inlinerCopy, form .inlinerClear {
+        margin: 0 4px;
+        padding: 0;
+        width: 125px;
+    }
+
+    .btn {
+        box-sizing: border-box;
+        display: inline-block;
+        font-family: "Lato", Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        background-color: #000;
+        vertical-align: middle;
+        cursor: pointer;
+        margin: 0;
+        padding: 10px;
+        -webkit-transition: background-color .15s;
+        transition: background-color .15s;
+        border: none;
+        width: 100%;
+        outline: none;
+    }
+
+    .btn:hover {
+        background-color: #333;
+    }
+
+
+/************************
+ *    FOOTER-RELATED    *
+ ************************/
+
+    div.footerlink {
+        margin: 10px auto;
+        text-align: center;
+    }
