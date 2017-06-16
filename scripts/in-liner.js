@@ -104,26 +104,23 @@
 
                     var parsed = $.trim($('#target').html());
                     $('#inlined').val(parsed);
+                    return $('#inlined').val();
+                });
 
-                    $('#copy_button').clipboard({
-                        path: 'jquery.clipboard.swf',
-                        copy: function() {
-                            $('#copy_button').on('click', function() {
+                // instantiate clipboard object
+                new Clipboard('#copy_button');
 
-                                // change button text to read 'copied.'
-                                $('#copy_button').val('Copied.');
-                                // alert('copied');
+                // handle copy button text changes
+                $('#copy_button').on('click', function() {
 
-                                // change the button text back after 3 seconds
-                                setTimeout(function(){
-                                    $('#copy_button').val('Copy HTML.');
-                                }, 3000);
+                    // change button text to read 'copied.'
+                    $('#copy_button').val('Copied.');
+                    // alert('copied');
 
-                                // alert("In-lined HTML copied to clipboard.");
-                            });
-                            return $('#inlined').val();
-                        }
-                    });
+                    // change the button text back after 3 seconds
+                    setTimeout(function(){
+                        $('#copy_button').val('Copy HTML.');
+                    }, 3000);
                 });
 
                 // clear both fields
