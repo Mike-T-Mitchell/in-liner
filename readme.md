@@ -25,6 +25,6 @@ The program is simple --
 * Profit.
 
 ### Special Thanks
-* To [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, a super elegant methods for copying text to the clipboard which is utilized in this project.
+* To [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, a super elegant method for copying text to the clipboard which is utilized in this project.
 
 Preview: [http://mike-t-mitchell.github.io/in-liner](http://mike-t-mitchell.github.io/in-liner)
