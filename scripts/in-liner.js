@@ -5,14 +5,12 @@
 (function ($) {
     'use strict';
     var Inliner = (function () {
-
         var styles = '',
             selectorStyles = [],
             selector = '',
             j;
 
         function traverse(o) {
-
             for (var i in o) {
                 if (o.hasOwnProperty(i)) {
                     if (o[i] !== null && (!$.isNumeric(i)) && typeof o[i] === 'object') {
@@ -24,7 +22,7 @@
                         $(selector).css(i, o[i]);
                     }
                     if (o[i] !== null && typeof o[i] === 'object') {
-                        // move along the object tree
+                        // move one step down the object tree
                         traverse(o[i]);
                     }
                 }
@@ -32,20 +30,17 @@
         }
 
         function applyStyles() {
-
             // loop through selectorStyles and use JS to inline the styles on your content
             if (selectorStyles.length > 0) {
                 for (j = 0; j < selectorStyles.length; j += 1) {
                     traverse(selectorStyles[j]);
                 }
-
                 // remove style tags from dom
                 $('style').remove();
             }
         }
 
         function createModel() {
-
             // loop through each declaration
             styles = $('#target').find('style').text().split("}");
             $.each(styles, function (index, elementType) {
@@ -94,7 +89,6 @@
                     selectorStyles.push(obj);
                 }
             });
-
             applyStyles();
         }
 
@@ -104,12 +98,11 @@
                 $('.submit_button').on('click', function() {
 
                     var originalCode = $.trim($('#original').val());
-                    // $('#target').html(originalCode);
+                    $('#target').html(originalCode);
 
-                    // build "busy" spinner model
                     createModel();
 
-                    var parsed = $.trim($('#target').html(originalCode));
+                    var parsed = $.trim($('#target').html());
                     $('#inlined').val(parsed);
 
                     $('#copy_button').clipboard({
@@ -119,7 +112,7 @@
 
                                 // change button text to read 'copied.'
                                 $('#copy_button').val('Copied.');
-                                alert('copied');
+                                // alert('copied');
 
                                 // change the button text back after 3 seconds
                                 setTimeout(function(){
@@ -128,7 +121,6 @@
 
                                 // alert("In-lined HTML copied to clipboard.");
                             });
-
                             return $('#inlined').val();
                         }
                     });
@@ -143,10 +135,8 @@
         };
     }());
 
-    // init
+    // initialize
     $(function () {
         Inliner.init();
     });
 }(jQuery));
-
-
