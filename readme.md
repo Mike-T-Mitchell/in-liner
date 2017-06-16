@@ -24,4 +24,7 @@ The program is simple --
 * Click the "Copy HTML" button to copy the newly "in-lined" markup (which is displayed in the text field at the bottom of the page) to your clipboard.
 * Profit.
 
+### Special Thanks
+* To [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, a super elegant methods for copying text to the clipboard which is utilized in this project.
+
 Preview: [http://mike-t-mitchell.github.io/in-liner](http://mike-t-mitchell.github.io/in-liner)
