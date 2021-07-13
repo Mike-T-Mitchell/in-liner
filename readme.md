@@ -5,28 +5,26 @@ HTML/CSS: @Mike-T-Mitchell
 
 
 ### What is this?
-An easy-to use CSS in-liner for e-mail.
+An easy-to use CSS in-liner for HTML table-based e-mails.
 
-### Why did you create it?
-Part of my job requires that I code several e-mails, each of which is sent to 100k+ customers, every day. With that kind of volume, these e-mails have to look as _perfect_ as possible across _all_ platforms. The problem is that the most popular e-mail providers (GMail and Outlook included) use pre-processors which remove the `<style>` tags from the markup, as well as any references to external stylesheets (i.e. `<link rel="stylesheet" href="styles/styles.css" />`). 
+### Why make this?
+I wanted to save time, and manually in-lining styles in HTML tables gets old _quickly._
 
-As I'm sure you know, an e-mail without styling usually looks... _not great_. Unfortunately, the only way to avoid this is to include _all_ of your styles **inline** (i.e. `<table align="center" style="border-collapse: collapse;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="640">`). If you're reading this right now, you know this gets old _quickly_.
-
-To save time, a co-worker and I wrote this in-liner. Now all we need to do is add `<style>` tags (and the appropriate style declarations) above the HTML table markup and then feed that markup into this in-liner. The in-liner processes that markup, inlines the styles appropriately, removes the `<style>` tags from the head, and outputs thet finished, in-lined markup.
-
-### How does it modify my code?
+### How does it work?
 
 * Grab all CSS selectors/declarations between the `<style>` tags and store them as `key:value` pairs in an object.
-* Compare the HTML elements in your markup to any of the selectors within the above object.
-* If a selector in that object matches an element in your markup, any styles defined for that selector are added to that element in the markup within a `style="` attrib.
+* Compare the HTML elements in your markup to the selectors within the above object.
+* If there's a match, any styles defined for the matched selector are added to the appropriate element in the markup via an inline `style="` attrib.
 
 ### How do I use it?
 * Clone this repo.
-* Open `index.html` in a browser (this was tested in Chrome and Firefox).
-* Paste your e-mail markup (incl'd the `<style>` tags) into the text field at the top. 
+* Open `index.html` in a browser (tested in Chrome and Firefox).
+* Paste your markup - including the `<style>` tags - into the text field at the top.
 * Click "Make Magic."
-* Inspect the output in the text field at the _bottom._ 
-* If nothing looks out of place, copy the in-lined markup to your clipboard by clicking the "Copy HTML" button.
+* Inspect the output to make sure nothing looks out of place.
+* Copy the in-lined markup to your clipboard via the "Copy HTML" button.
+* Paste the in-lined markup into whatever e-mail program you're using.
+* Send a test/preview email to yourself to ensure it looks as expected.
 * Profit.
 
 ### Attributions
