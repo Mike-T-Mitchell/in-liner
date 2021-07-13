@@ -15,7 +15,7 @@ I wanted to save time, and manually in-lining styles in HTML tables gets old _qu
 * Grab all CSS selectors/declarations between the `<style>` tags and store them as `key:value` pairs in an object.
 * Compare the selectors in that object to the HTML element names in the source markup.
 * If there's a match, any styles defined for the matched selector are added to the appropriate element in the markup via an inline `style=""` attrib.
-* Output new HTML with inlined styles.
+* Output new HTML with the inlined styles.
 
 ### How do I use it?
 * Clone this repo.
