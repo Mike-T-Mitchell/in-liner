@@ -29,7 +29,7 @@ I wanted to save time, and manually in-lining styles in HTML tables gets old _qu
 * Profit.
 
 ### Attributions
-* [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, which this in-liner uses to copy the in-lined output to the clipboard.
+* [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, which I used as the solution for copying the output to the clipboard.
 
 ### Preview
 Wanna preview the tool? Got you covered: [http://mike-t-mitchell.github.io/in-liner](http://mike-t-mitchell.github.io/in-liner).
