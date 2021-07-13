@@ -8,23 +8,29 @@ HTML/CSS: @Mike-T-Mitchell
 An easy-to use CSS in-liner for e-mail.
 
 ### Why did you create it?
-Part of my job requires that I code several e-mails, each of which is sent to 100k+ customers, every day. With that kind of volume, these e-mails have to look as _perfect_ as possible across _all_ platforms. The problem is that the most popular e-mail providers (GMail and Outlook included) use pre-processors which remove the `<style>` tags from the markup, as well as any references to external stylesheets (i.e. `<link rel="stylesheet" href="styles/styles.css" />`). As I'm sure you know, an e-mail without styling usually looks... _not great_. Unfortunately, the only way to avoid this is to include _all_ of your styles **inline** (i.e. `<table align="center" style="border-collapse: collapse;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="640">`). If you're here reading this right now, you're probably already aware that this gets old _pretty quickly_. Therefore, a co-worker and I decided to create a solution that would let us write e-mail markup the same way we would for any basic web page using a `<style>` element in the head and including all of our selectors/declarations within. Then, all we'd have to do is feed that semantically correct -- but _very_ e-mail **un-ready** -- markup into our solution, and out would come our updated, "in-lined" markup! **This is that.**
+Part of my job requires that I code several e-mails, each of which is sent to 100k+ customers, every day. With that kind of volume, these e-mails have to look as _perfect_ as possible across _all_ platforms. The problem is that the most popular e-mail providers (GMail and Outlook included) use pre-processors which remove the `<style>` tags from the markup, as well as any references to external stylesheets (i.e. `<link rel="stylesheet" href="styles/styles.css" />`). 
+
+As I'm sure you know, an e-mail without styling usually looks... _not great_. Unfortunately, the only way to avoid this is to include _all_ of your styles **inline** (i.e. `<table align="center" style="border-collapse: collapse;" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="640">`). If you're reading this right now, you know this gets old _quickly_.
+
+To save time, a co-worker and I wrote this in-liner. Now all we need to do is add `<style>` tags (and the appropriate style declarations) above the HTML table markup and then feed that markup into this in-liner. The in-liner processes that markup, inlines the styles appropriately, removes the `<style>` tags from the head, and outputs thet finished, in-lined markup.
 
 ### How does it modify my code?
-The program is simple --
 
-* It begins by grabbing all of your CSS selectors and declarations from within any `<style>` tags it finds and stores them in an object.
-* It then separates those selectors and declarations into _key:value_ pairs and begins comparing the HTML elements in your markup to any selector names it stored in that object.
-* If an element type in your markup matches a selector name, a `style` attribute is added to that element along with the _value_ portion of that _key:value_ pair mentioned previously (i.e. `<table style="border-collapse: collapse;">`)
+* Grab all CSS selectors/declarations between the `<style>` tags and store them as `key:value` pairs in an object.
+* Compare the HTML elements in your markup to any of the selectors within the above object.
+* If a selector in that object matches an element in your markup, any styles defined for that selector are added to that element in the markup within a `style="` attrib.
 
 ### How do I use it?
-* Clone this repository to your local machine.
-* Open `index.html` in your browser.
-* Paste your e-mail markup (with the `<style>` tags) into the text field at the top of the page and click "Make Magic."
-* Click the "Copy HTML" button to copy the newly "in-lined" markup (which is displayed in the text field at the bottom of the page) to your clipboard.
+* Clone this repo.
+* Open `index.html` in a browser (this was tested in Chrome and Firefox).
+* Paste your e-mail markup (incl'd the `<style>` tags) into the text field at the top. 
+* Click "Make Magic."
+* Inspect the output in the text field at the _bottom._ 
+* If nothing looks out of place, copy the in-lined markup to your clipboard by clicking the "Copy HTML" button.
 * Profit.
 
-### Special Thanks
-* To [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, a super elegant method for copying text to the clipboard which is utilized in this project.
+### Attributions
+* [Zeno Rocha](https://github.com/zenorocha) for creating clipboard.js, which this in-liner uses to copy the in-lined output to the clipboard.
 
-Preview: [http://mike-t-mitchell.github.io/in-liner](http://mike-t-mitchell.github.io/in-liner)
+### Preview
+Wanna preview the tool? Got you covered: [http://mike-t-mitchell.github.io/in-liner](http://mike-t-mitchell.github.io/in-liner).
